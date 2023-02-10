@@ -8,8 +8,7 @@ public final class ConfigProvider {
     private static final Properties prop = InitProperties();
     public static final String BROWSER = prop.getProperty("browser");
     public static final String BASE_URL = prop.getProperty("base.url");
-
-
+    
     private ConfigProvider(){}
 
     private static Properties InitProperties(){

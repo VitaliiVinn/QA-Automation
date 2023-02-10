@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 
 import static com.hilel.core.util.WaitUtils.waitElementsUntilIsClickable;
 
-
 public class TestRunner {
     public static void main(String[] args) {
         WebDriver driver = WebDriverFactory.getDriver();
@@ -14,6 +13,6 @@ public class TestRunner {
         WebElement buttonCourses = driver.findElement(By.xpath("//div[@class='button-popap call']"));
         waitElementsUntilIsClickable(driver, buttonCourses);
         buttonCourses.click();
-//        driver.quit();
+        driver.quit();
     }
 }
