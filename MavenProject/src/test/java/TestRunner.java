@@ -11,9 +11,9 @@ public class TestRunner {
     public static void main(String[] args) {
         WebDriver driver = WebDriverFactory.getDriver();
         driver.get(ConfigProvider.BASE_URL);
-        WebElement buttonCourses = driver.findElement(By.xpath("(//p[@class='course-cat-bar_label'])[2]"));
+        WebElement buttonCourses = driver.findElement(By.xpath("//div[@class='button-popap call']"));
         waitElementsUntilIsClickable(driver, buttonCourses);
         buttonCourses.click();
-        driver.quit();
+//        driver.quit();
     }
 }
