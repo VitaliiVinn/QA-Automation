@@ -5,18 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27073120-4ef3-4f04-9ce8-ada31bbb71a3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hilel/core/pages/BasePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hilel/core/pages/HomePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/hilel/core/pages/HillelPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hilel/core/util/ConfigProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hilel/core/util/ConfigProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/hilel/core/util/WaitUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hilel/core/util/WaitUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hilel/core/util/ConfigProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hilel/core/util/ConfigProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/hilel/core/util/WaitUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/hilel/core/util/WaitUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/TestRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestRunner.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +117,7 @@
       <workItem from="1676048929118" duration="247000" />
       <workItem from="1676062415492" duration="1915000" />
       <workItem from="1676110409643" duration="3885000" />
-      <workItem from="1676285263409" duration="9360000" />
+      <workItem from="1676285263409" duration="11329000" />
     </task>
     <servers />
   </component>
