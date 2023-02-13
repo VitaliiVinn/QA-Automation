@@ -10,7 +10,7 @@ public class TestRunner {
     public static void main(String[] args) {
         WebDriver driver = WebDriverFactory.getDriver();
         driver.get(ConfigProvider.BASE_URL);
-        WebElement buttonCourses = driver.findElement(By.xpath("//div[@class='button-popap call']"));
+        WebElement buttonCourses = driver.findElement(By.xpath("(//div[@class='course-bar_body'])[3]"));
         waitElementsUntilIsClickable(driver, buttonCourses);
         buttonCourses.click();
         driver.quit();
