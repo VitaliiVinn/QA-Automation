@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27073120-4ef3-4f04-9ce8-ada31bbb71a3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/hilel/core/pages/HillelPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hilel/core/driver/WebDriverFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hilel/core/driver/WebDriverFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hilel/core/pages/HillelPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hilel/core/pages/CourseOfAutomation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hilel/core/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hilel/core/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/hilel/core/util/WaitUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/hilel/core/util/WaitUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +121,8 @@
       <workItem from="1676048929118" duration="247000" />
       <workItem from="1676062415492" duration="1915000" />
       <workItem from="1676110409643" duration="3885000" />
-      <workItem from="1676285263409" duration="11329000" />
+      <workItem from="1676285263409" duration="12030000" />
+      <workItem from="1676476718287" duration="2589000" />
     </task>
     <servers />
   </component>

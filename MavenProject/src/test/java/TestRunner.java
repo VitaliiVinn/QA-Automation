@@ -13,6 +13,6 @@ public class TestRunner {
         WebElement buttonCourses = driver.findElement(By.xpath("(//div[@class='course-bar_body'])[3]"));
         waitElementsUntilIsClickable(driver, buttonCourses);
         buttonCourses.click();
-        driver.quit();
+//        driver.quit();
     }
 }

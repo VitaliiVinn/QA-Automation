@@ -9,7 +9,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
 
-public class WebDriverFactory {
+    public class WebDriverFactory {
     private static final String BROWSER = System.getProperty("browser");
     private static WebDriver driver;
     public static WebDriver getDriver() {
