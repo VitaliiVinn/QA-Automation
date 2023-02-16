@@ -1,4 +1,4 @@
-package com.hilel.core.util;
+package com.hillel.util.core;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -21,3 +21,4 @@ public final class ConfigProvider {
         return properties;
     }
 }
+

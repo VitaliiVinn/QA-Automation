@@ -1,7 +1,7 @@
-package com.hilel.core.driver;
+package com.hillel.core.driver;
 
-import com.hilel.core.Browsers;
-import com.hilel.core.util.ConfigProvider;
+import com.hillel.core.Browsers;
+import com.hillel.util.core.ConfigProvider;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,12 +12,13 @@ import org.openqa.selenium.opera.OperaDriver;
 public class WebDriverFactory {
     private static final String BROWSER = System.getProperty("browser");
     private static WebDriver driver;
+
     public static WebDriver getDriver() {
         String browser_type = BROWSER != null ? BROWSER : ConfigProvider.BROWSER;
 //        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         return getDriver(Browsers.valueOf(browser_type.toUpperCase()));
     }
-    public static WebDriver getDriver(Browsers browsers) {
+    public static WebDriver getDriver(Browsers browsers){
         switch (browsers) {
             case CHROME:
                 return getChromeDriver();
@@ -31,8 +32,8 @@ public class WebDriverFactory {
                 throw new IllegalArgumentException("Wrong browser was chosen");
         }
     }
-    private static WebDriver getChromeDriver() {
-        if(driver == null){
+    private static WebDriver getChromeDriver(){
+        if (driver == null){
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
         }

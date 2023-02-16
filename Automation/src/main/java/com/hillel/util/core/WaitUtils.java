@@ -1,4 +1,4 @@
-package com.hilel.core.util;
+package com.hillel.util.core;
 
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
@@ -7,9 +7,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class WaitUtils {
-    public WaitUtils() {
+    private WaitUtils(){
     }
-
     public static void waitElementsUntilIsClickable(WebDriver driver, WebElement element) {
         WebDriverWait wait = new WebDriverWait(driver, 40);
         wait.ignoring(StaleElementReferenceException.class);

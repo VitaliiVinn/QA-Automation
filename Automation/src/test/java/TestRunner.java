@@ -1,10 +1,10 @@
-import com.hilel.core.driver.WebDriverFactory;
-import com.hilel.core.util.ConfigProvider;
+import com.hillel.core.driver.WebDriverFactory;
+import com.hillel.util.core.ConfigProvider;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import static com.hilel.core.util.WaitUtils.waitElementsUntilIsClickable;
+import static com.hillel.util.core.WaitUtils.waitElementsUntilIsClickable;
 
 public class TestRunner {
     public static void main(String[] args) {
@@ -13,6 +13,6 @@ public class TestRunner {
         WebElement buttonCourses = driver.findElement(By.xpath("(//div[@class='course-bar_body'])[3]"));
         waitElementsUntilIsClickable(driver, buttonCourses);
         buttonCourses.click();
-        driver.quit();
+//        driver.quit();
     }
 }

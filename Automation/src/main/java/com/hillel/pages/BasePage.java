@@ -1,4 +1,4 @@
-package com.hilel.core.pages;
+package com.hillel.pages;
 
 import org.openqa.selenium.WebDriver;
 
