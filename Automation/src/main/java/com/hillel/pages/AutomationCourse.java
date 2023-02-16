@@ -8,32 +8,26 @@ import org.openqa.selenium.WebElement;
 import static com.hillel.util.core.WaitUtils.waitElementsUntilIsVisible;
 
 public class AutomationCourse extends BasePage{
-
-    public String title = "//span[@class='course-descriptor_header-text']";
-    public String rank = "//div[@class='course-rating']";
-
+    private By title = By.xpath("//span[@class='course-descriptor_header-text']");
+    private By rank = By.xpath("//div[@class='course-rating']");
     public AutomationCourse(WebDriver driver) {
         super(driver);
     }
-
     @Override
     public void pageOpen() {
         super.driver.get(ConfigProvider.BASE_URL);
         ensureOpened();
     }
-
     @Override
     public void ensureOpened() {
-        WebElement logo = super.driver.findElement(By.xpath(title));
-        WebElement logo1 = super.driver.findElement(By.xpath(rank));
+        WebElement logo = super.driver.findElement(title);
+        WebElement logo1 = super.driver.findElement(rank);
         waitElementsUntilIsVisible(super.driver, logo);
     }
-
     public String getTitle() {
-        return title;
+        return driver.findElement(title).getText();
     }
-
     public String getRank() {
-        return rank;
+        return driver.findElement(rank).getText();
     }
 }
