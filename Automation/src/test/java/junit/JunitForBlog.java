@@ -14,45 +14,35 @@ import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
-//@RunWith(Parameterized.class)
+@RunWith(Parameterized.class)
 public class JunitForBlog extends BaseTest {
 
-    @Parameterized.Parameters(name = "expacted={0}, actual={1}")
+    @Parameterized.Parameters(name = "expected={0}")
     public static List<Object[]> data() {
         return Arrays.asList(new Object[][]{
-                {25},
+                {10},
                 {15},
                 {15}
         });
     }
 
     @Parameterized.Parameter(0)
-    public String expected;
-//    @Parameterized.Parameter(1)
-//    public String actual;
+    public int expected;
 
     @Test
     public void testForClickingBlogBtn() {
         ITHillelMainPage itHillelMainPage = new ITHillelMainPage(driver);
         PagesWithNewsBlocks pagesWithNewsBlocks = new PagesWithNewsBlocks(driver);
-        driver.manage().window().maximize();
-//        JavascriptExecutor jsx = (JavascriptExecutor)driver;
-//        jsx.executeScript("window.scrollTo(0, document.body.scrollHeight)");
         itHillelMainPage.pageOpen();
         itHillelMainPage.clickForBlogBtn();
         pagesWithNewsBlocks.clickOnFrontEndBtn();
-//        pagesWithNewsBlocks.blocksOnTheFrontEndPage();
-        Assert.assertEquals("Amount not equal", pagesWithNewsBlocks.setFrontEndBlocks(expected), 10);
-        pagesWithNewsBlocks.setFrontEndBlocks(expected);
-        driver.navigate().back();
+        pagesWithNewsBlocks.setNews(expected);
+        Assert.assertEquals("Amount not equal", expected, 10);
         pagesWithNewsBlocks.clickOnGameDevBtn();
-//        Assert.assertEquals("Amount not equal", pagesWithNewsBlocks.blocksOnTheGameDevPage(), 10);
-//        pagesWithNewsBlocks.blocksOnTheGameDevPage();
-        pagesWithNewsBlocks.setGameDevBlocks(expected);
-        driver.navigate().back();
+        pagesWithNewsBlocks.setNews(expected);
+        Assert.assertEquals("Amount not equal", expected, 10);
         pagesWithNewsBlocks.clickOnTheQA();
-//        Assert.assertEquals("Amount not equal", pagesWithNewsBlocks.blocksOnTheQA(), 10);
-//        pagesWithNewsBlocks.blocksOnTheQA();
-        pagesWithNewsBlocks.setQABlocks(expected);
+        pagesWithNewsBlocks.setNews(expected);
+        Assert.assertEquals("Amount not equal", expected, 10);
     }
 }

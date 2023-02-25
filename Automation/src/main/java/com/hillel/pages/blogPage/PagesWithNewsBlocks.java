@@ -2,11 +2,12 @@ package com.hillel.pages.blogPage;
 
 import com.hillel.pages.BasePage;
 import com.hillel.util.core.ConfigProvider;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import javax.swing.*;
 import java.util.List;
 
 import static com.hillel.util.core.WaitUtils.waitElementsUntilIsClickable;
@@ -15,18 +16,12 @@ public class PagesWithNewsBlocks extends BasePage {
 
     @FindBy(xpath = "(//a[@class='btn-theme theme-list_link'])[1]")
     private WebElement frontEndBtn;
-    @FindBy(xpath = "//a[@class='block-anchor']")
-    private List<WebElement> blocksOfFENews;
-
+    @FindBy(xpath = "//ul[@class='posts_list post-list']/li")
+    private List<WebElement> blocksOfNews;
     @FindBy(xpath = "(//a[@class='btn-theme theme-list_link'])[5]")
     public WebElement gameDevBtn;
-    @FindBy(xpath = "//a[@class='block-anchor']")
-    public List<WebElement> blocksOfGDNews;
-
     @FindBy(xpath = "(//a[@class='btn-theme theme-list_link'])[9]")
     public WebElement qaBtn;
-    @FindBy(xpath = "//a[@class='block-anchor']")
-    public List<WebElement> blocksOfQA;
 
     public PagesWithNewsBlocks(WebDriver driver) {
         super(driver);
@@ -46,41 +41,62 @@ public class PagesWithNewsBlocks extends BasePage {
     public void clickOnFrontEndBtn(){
         waitElementsUntilIsClickable(driver, frontEndBtn);
         frontEndBtn.click();
+        Actions actions = new Actions(driver);
+        actions.sendKeys(Keys.ARROW_DOWN).perform();
+        for (int second = 0;; second++){
+            if(second >= 60){
+                break;
+            }
+            actions.sendKeys(Keys.ARROW_DOWN).perform();
+            try{
+                Thread.sleep(50);
+            } catch (InterruptedException e){
+                e.printStackTrace();
+            }
+        }
+        driver.navigate().back();
     }
-//    public void visibilityOfBlocks(){
-//        waitElementsUntilIsVisible(driver, blocksOfNews);
-//        blocksOfNews.isDisplayed();
-//    }
-    public int blocksOnTheFrontEndPage(){
-        return blocksOfFENews.size();
+    public int blocksOnAnyPublicPage(){
+        return blocksOfNews.size();
     }
     public void clickOnGameDevBtn(){
         waitElementsUntilIsClickable(driver, gameDevBtn);
         gameDevBtn.click();
-    }
-    public int blocksOnTheGameDevPage(){
-        return blocksOfGDNews.size();
+        Actions actions = new Actions(driver);
+        actions.sendKeys(Keys.ARROW_DOWN).perform();
+        for (int second = 0;; second++){
+            if(second >= 60){
+                break;
+            }
+            actions.sendKeys(Keys.ARROW_DOWN).perform();
+            try{
+                Thread.sleep(50);
+            } catch (InterruptedException e){
+                e.printStackTrace();
+            }
+        }
+        driver.navigate().back();
     }
     public void clickOnTheQA(){
         waitElementsUntilIsClickable(driver, qaBtn);
+        Actions actions = new Actions(driver);
+        actions.sendKeys(Keys.ARROW_DOWN).perform();
+        for (int second = 0;; second++){
+            if(second >= 60){
+                break;
+            }
+            actions.sendKeys(Keys.ARROW_DOWN).perform();
+            try{
+                Thread.sleep(50);
+            } catch (InterruptedException e){
+                e.printStackTrace();
+            }
+        }
         qaBtn.click();
     }
-    public int blocksOnTheQA(){
-        return blocksOfQA.size();
-    }
-    public void setFrontEndBlocks(String frontEnd){
-        for (WebElement element: blocksOfFENews){
-            blocksOfFENews.size();
-        }
-    }
-    public void setGameDevBlocks(String gameDev){
-        for (WebElement element: blocksOfGDNews){
-            blocksOfGDNews.size();
-        }
-    }
-    public void setQABlocks(String qa){
-        for (WebElement element: blocksOfQA){
-            blocksOfQA.size();
+    public void setNews(int amountNews){
+        for (WebElement element: blocksOfNews){
+            blocksOfNews.size();
         }
     }
 }
