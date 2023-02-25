@@ -18,10 +18,10 @@ public class FreeConsultationPage extends BasePage {
     private WebElement userEmail;
     @FindBy(xpath = "//input[@id='input-tel-consultation']")
     private WebElement userPhone;
-    @FindBy(xpath = "//div[@id='container-input-course-consultation']")
-    private WebElement chooseCourseTable;
     @FindBy(xpath = "//div[@class='socials-input-triggers']/button")
     private List<WebElement> messengersList;
+    @FindBy(xpath = "//div[@id='container-input-course-consultation']")
+    private WebElement chooseCourseTable;
     @FindBy(xpath = "//ul[@class='listbox_opt-list -scrollbar']/li")
     private List<WebElement> coursesList;
 

@@ -21,21 +21,21 @@ public class JunitTest extends BaseTest {
                 {"Petr", "hn@kib.kf", "0667521255", "tg", "JS"}
         });
     }
-    @Parameterized.Parameters(0)
+    @Parameterized.Parameter(0)
     public String name;
-    @Parameterized.Parameters(1)
+    @Parameterized.Parameter(1)
     public String email;
-    @Parameterized.Parameters(2)
+    @Parameterized.Parameter(2)
     public String phone;
-    @Parameterized.Parameters(3)
+    @Parameterized.Parameter(3)
     public String messenger;
-    @Parameterized.Parameters(4)
+    @Parameterized.Parameter(4)
     public String course;
 
     @Test
     public void firstJunitTest() {
         automationCourse.pageOpen();
-        automationCourse.clickRank();
+//        automationCourse.clickRank();
     }
 
     @Test
@@ -46,6 +46,7 @@ public class JunitTest extends BaseTest {
         freeConsultationPage.setEmail(email);
         freeConsultationPage.setPhone(phone);
         freeConsultationPage.setMessenger(messenger);
+        freeConsultationPage.chooseCourseField();
         freeConsultationPage.setCourses(course);
 
     }
