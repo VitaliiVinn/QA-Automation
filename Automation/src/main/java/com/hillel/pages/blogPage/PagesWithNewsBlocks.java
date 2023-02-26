@@ -8,11 +8,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import javax.swing.*;
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.hillel.util.core.WaitUtils.waitElementsUntilIsClickable;
 
 public class PagesWithNewsBlocks extends BasePage {
+
 
     @FindBy(xpath = "(//a[@class='btn-theme theme-list_link'])[1]")
     private WebElement frontEndBtn;
@@ -22,6 +24,9 @@ public class PagesWithNewsBlocks extends BasePage {
     public WebElement gameDevBtn;
     @FindBy(xpath = "(//a[@class='btn-theme theme-list_link'])[9]")
     public WebElement qaBtn;
+
+    ArrayList<String> arrayList = new ArrayList<>();
+
 
     public PagesWithNewsBlocks(WebDriver driver) {
         super(driver);
@@ -38,65 +43,73 @@ public class PagesWithNewsBlocks extends BasePage {
     public void ensureOpened() {
 
     }
-    public void clickOnFrontEndBtn(){
+
+    public void clickOnFrontEndBtn() {
         waitElementsUntilIsClickable(driver, frontEndBtn);
         frontEndBtn.click();
         Actions actions = new Actions(driver);
         actions.sendKeys(Keys.ARROW_DOWN).perform();
-        for (int second = 0;; second++){
-            if(second >= 60){
+        for (int second = 0; ; second++) {
+            if (second >= 60) {
                 break;
             }
             actions.sendKeys(Keys.ARROW_DOWN).perform();
-            try{
+            try {
                 Thread.sleep(50);
-            } catch (InterruptedException e){
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
         driver.navigate().back();
     }
-    public int blocksOnAnyPublicPage(){
+
+    public int blocksOnAnyPublicPage() {
         return blocksOfNews.size();
     }
-    public void clickOnGameDevBtn(){
+
+    public void clickOnGameDevBtn() {
         waitElementsUntilIsClickable(driver, gameDevBtn);
         gameDevBtn.click();
         Actions actions = new Actions(driver);
         actions.sendKeys(Keys.ARROW_DOWN).perform();
-        for (int second = 0;; second++){
-            if(second >= 60){
+        for (int second = 0; ; second++) {
+            if (second >= 60) {
                 break;
             }
             actions.sendKeys(Keys.ARROW_DOWN).perform();
-            try{
+            try {
                 Thread.sleep(50);
-            } catch (InterruptedException e){
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
         driver.navigate().back();
     }
-    public void clickOnTheQA(){
+
+    public void clickOnTheQA() {
         waitElementsUntilIsClickable(driver, qaBtn);
+        qaBtn.click();
         Actions actions = new Actions(driver);
         actions.sendKeys(Keys.ARROW_DOWN).perform();
-        for (int second = 0;; second++){
-            if(second >= 60){
+        for (int second = 0; ; second++) {
+            if (second >= 60) {
                 break;
             }
             actions.sendKeys(Keys.ARROW_DOWN).perform();
-            try{
+            try {
                 Thread.sleep(50);
-            } catch (InterruptedException e){
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
-        qaBtn.click();
     }
-    public void setNews(int amountNews){
-        for (WebElement element: blocksOfNews){
-            blocksOfNews.size();
+
+    public void setNews(String amountNews) {
+        for (WebElement element : this.blocksOfNews) {
+            if(element.getText().equals(amountNews)){
+                element.click();
+            }
         }
     }
+
 }
