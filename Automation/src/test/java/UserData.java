@@ -27,16 +27,27 @@ public class UserData {
         bufferedWriter.newLine();
         bufferedWriter.write(age);
         bufferedWriter.close();
+        if(fileWriter.getEncoding() == null){
+            fileWriter = null;
+        }
     }
 
     public void deserialize(String filePath) throws IOException {
-        File file = new File(filePath);
-        FileReader fileReader = new FileReader(file.getAbsoluteFile());
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
-        int c;
-        while (bufferedReader.ready()){
-            String line = bufferedReader.readLine();
-            System.out.println(line);
+        try{
+            File file = new File(filePath);
+            FileReader fileReader = new FileReader(file.getAbsoluteFile());
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            int c;
+            while (bufferedReader.ready()){
+                String line = bufferedReader.readLine();
+                System.out.println(line);
+        }
+            if(bufferedReader.readLine() != null){
+                bufferedReader = null;
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 //            Обробити такі кейси:
