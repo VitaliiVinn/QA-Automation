@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static com.hillel.util.core.WaitUtils.waitElementsUntilIsClickable;
@@ -18,10 +19,10 @@ public class FreeConsultationPage extends BasePage {
     private WebElement userEmail;
     @FindBy(xpath = "//input[@id='input-tel-consultation']")
     private WebElement userPhone;
-    @FindBy(xpath = "//div[@id='container-input-course-consultation']")
-    private WebElement chooseCourseTable;
     @FindBy(xpath = "//div[@class='socials-input-triggers']/button")
     private List<WebElement> messengersList;
+    @FindBy(xpath = "//div[@id='container-input-course-consultation']")
+    private WebElement chooseCourseTable;
     @FindBy(xpath = "//ul[@class='listbox_opt-list -scrollbar']/li")
     private List<WebElement> coursesList;
 
@@ -40,32 +41,37 @@ public class FreeConsultationPage extends BasePage {
     public void ensureOpened() {
 
     }
-    public void setName(String name){
+
+    public void setName(String name) {
         userName.sendKeys(name);
     }
-    public void setEmail(String email){
+
+    public void setEmail(String email) {
         userEmail.sendKeys(email);
     }
-    public void setPhone(String phone){
+
+    public void setPhone(String phone) {
         userPhone.sendKeys(phone);
     }
-    public void setMessenger(String messenger){
-        for(WebElement element: this.messengersList){
-            if(element.getAttribute("data-name").equals(messenger)){
+
+    public void setMessenger(String messenger) {
+        for (WebElement element : this.messengersList) {
+            if (element.getAttribute("data-name").equals(messenger)) {
                 element.click();
             }
         }
     }
-    public void setCourses(String courses){
-        for(WebElement element: this.coursesList){
-            if(element.getText().equals(courses)){
+
+    public void setCourses(String courses) {
+        for (WebElement element : this.coursesList) {
+            if (element.getText().equals(courses)) {
                 element.click();
             }
         }
     }
-    public void chooseCourseField(){
+
+    public void chooseCourseField() {
         waitElementsUntilIsClickable(driver, chooseCourseTable);
         chooseCourseTable.click();
     }
-
 }
