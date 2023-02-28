@@ -7,10 +7,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 import static com.hillel.util.core.WaitUtils.waitElementsUntilIsClickable;
 import static com.hillel.util.core.WaitUtils.waitElementsUntilIsVisible;
 
-public class AutomationCourse extends BasePage{
+public class AutomationCourse extends BasePage {
     @FindBy(xpath = "//span[@class='course-descriptor_header-text']")
     private String title;
     @FindBy(xpath = "//div[@class='course-rating']")
@@ -19,15 +21,24 @@ public class AutomationCourse extends BasePage{
     private WebElement programBtn;
     @FindBy(xpath = "//button[@id='btn-consultation-hero']")
     private WebElement consultationBtn;
+
+    @FindBy(xpath = "//a[@href='https://ithillel.ua/courses/programming']")
+    private WebElement corsesBtn;
+
+    @FindBy(xpath = "//ul[@id='accordion-faq']/li")
+    private List<WebElement> commonQuestion;
+
     public AutomationCourse(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
+
     @Override
     public void pageOpen() {
         super.driver.get(ConfigProvider.BASE_URL);
         ensureOpened();
     }
+
     @Override
     public void ensureOpened() {
 //        WebElement logo = super.driver.findElement(By.xpath(title));
@@ -35,17 +46,29 @@ public class AutomationCourse extends BasePage{
 //        waitElementsUntilIsVisible(super.driver, logo);
 //        waitElementsUntilIsVisible(super.driver, logo1);
     }
-    public void clickRank(){
+    public void clickRank() {
         waitElementsUntilIsClickable(driver, programBtn);
         programBtn.click();
     }
-    public void clickFreeConsultation(){
+
+    public void clickFreeConsultation() {
         waitElementsUntilIsClickable(driver, consultationBtn);
         consultationBtn.click();
     }
+
+    public void clickProgranmmingCourseBtn() {
+        waitElementsUntilIsClickable(driver, corsesBtn);
+        corsesBtn.click();
+    }
+
+    public int commonQuestionsMethod() {
+        return commonQuestion.size();
+    }
+
     public String getTitle() {
         return driver.findElement(By.xpath(title)).getText();
     }
+
     public String getRank() {
         return driver.findElement(By.xpath(rank)).getText();
     }

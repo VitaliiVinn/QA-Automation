@@ -37,7 +37,6 @@ public class JunitTest extends BaseTest {
         automationCourse.pageOpen();
 //        automationCourse.clickRank();
     }
-
     @Test
     public void freeConsultTest() {
         automationCourse.pageOpen();
@@ -48,6 +47,5 @@ public class JunitTest extends BaseTest {
         freeConsultationPage.setMessenger(messenger);
         freeConsultationPage.chooseCourseField();
         freeConsultationPage.setCourses(course);
-
     }
 }
