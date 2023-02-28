@@ -19,22 +19,22 @@ import static org.junit.Assert.assertEquals;
 @RunWith(Parameterized.class)
 public class JunitForBlog extends BaseTest {
 
-    @Parameterized.Parameters(name = "page={0}, blockOfNews={1}")
+    @Parameterized.Parameters(name = "message={0}, actual={1}, expected={2}")
     public static List<Object[]> data() {
         return Arrays.asList(new Object[][]{
-                {"frontend", "blockNewsFe"},
-                {"gameDev", "blockNewsOfGd"},
-                {"qa", "blockNewsOfQA"}
+                {"Not equal", "10", "10"},
+                {"Not equal", "5", "5"},
+                {"Not equal", "15", "15"}
         });
     }
     @Parameterized.Parameter(0)
-    public String page;
+    public String message;
     @Parameterized.Parameter(1)
-    public String clickNews;
-    @Test
-    public void clickTopics(){
+    public String actual;
 
-    }
+    @Parameterized.Parameter(2)
+    public String expected;
+
     @Test
     public void testPagesForClick() {
         ITHillelMainPage itHillelMainPage = new ITHillelMainPage(driver);
@@ -44,8 +44,6 @@ public class JunitForBlog extends BaseTest {
         pagesWithNewsBlocks.clickOnFrontEndBtn();
         pagesWithNewsBlocks.clickOnGameDevBtn();
         pagesWithNewsBlocks.clickOnTheQA();
-        pagesWithNewsBlocks.setNews(page);
-        pagesWithNewsBlocks.setNews(clickNews);
-        Assert.assertEquals("Not equal", 20, clickNews);
+        Assert.assertEquals(message, expected, actual);
     }
 }
