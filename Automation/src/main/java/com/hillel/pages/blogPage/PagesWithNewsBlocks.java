@@ -25,8 +25,6 @@ public class PagesWithNewsBlocks extends BasePage {
     @FindBy(xpath = "(//a[@class='btn-theme theme-list_link'])[9]")
     public WebElement qaBtn;
 
-    ArrayList<String> arrayList = new ArrayList<>();
-
 
     public PagesWithNewsBlocks(WebDriver driver) {
         super(driver);
