@@ -27,6 +27,8 @@ public class AutomationCourse extends BasePage {
 
     @FindBy(xpath = "//ul[@id='accordion-faq']/li")
     private List<WebElement> commonQuestion;
+    @FindBy(xpath = "//ul[@class='block-course-cats_list']/li")
+    private List<WebElement> blockCourse;
 
     public AutomationCourse(WebDriver driver) {
         super(driver);
@@ -59,6 +61,9 @@ public class AutomationCourse extends BasePage {
     public void clickProgranmmingCourseBtn() {
         waitElementsUntilIsClickable(driver, corsesBtn);
         corsesBtn.click();
+    }
+    public int getBlockCoursesSize(){
+        return blockCourse.size();
     }
 
     public int commonQuestionsMethod() {

@@ -2,7 +2,9 @@ package test_ng;
 
 import com.hillel.core.driver.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.ITestResult;
+import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -19,18 +21,18 @@ public class BaseTestForHomeTask {
     protected WebDriver driver = WebDriverFactory.getDriver();
 
     @BeforeMethod
-    public Method testStartedLog(Method method) {
-        
-        System.out.println("METHOD_NAME");
-//        driver = WebDriverFactory.getDriver();
-//        driver.manage().window().maximize();
-        return method;
+    public void testStartedLog(Method method) {
+        driver = WebDriverFactory.getDriver();
+        driver.manage().window().maximize();
+//        Method[] methods = TestNg.class.getMethods();
+        String.format("testNGtesting %s", method.getName());
+
     }
     @AfterMethod
-    public ITestResult testFinishedLog(ITestResult result) {
-//        driver.quit();
-        System.out.println("METHOD_NAME");
-        return result;
+    public void testFinishedLog(ITestResult result) {
+        result = Reporter.getCurrentTestResult();
+        driver.quit();
+
     }
 
 }
