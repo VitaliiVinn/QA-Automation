@@ -32,6 +32,7 @@ public class AutomationCourse extends BasePage {
     @FindBy(xpath = "//ul[@class='block-course-cats_list']/li")
     private List<WebElement> blockCourse;
 
+
     public AutomationCourse(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
