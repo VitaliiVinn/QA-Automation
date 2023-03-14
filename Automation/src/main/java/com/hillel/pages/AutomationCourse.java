@@ -1,6 +1,7 @@
 package com.hillel.pages;
 
 import com.hillel.util.core.ConfigProvider;
+import lombok.Getter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,6 +20,7 @@ public class AutomationCourse extends BasePage {
     private String rank;
     @FindBy(xpath = "(//div[@class='course-bar_body'])[3]")
     private WebElement programBtn;
+    @Getter
     @FindBy(xpath = "//button[@id='btn-consultation-hero']")
     private WebElement consultationBtn;
 
@@ -29,6 +31,7 @@ public class AutomationCourse extends BasePage {
     private List<WebElement> commonQuestion;
     @FindBy(xpath = "//ul[@class='block-course-cats_list']/li")
     private List<WebElement> blockCourse;
+
 
     public AutomationCourse(WebDriver driver) {
         super(driver);
