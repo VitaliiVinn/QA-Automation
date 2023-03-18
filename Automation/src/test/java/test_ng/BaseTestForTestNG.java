@@ -4,7 +4,6 @@ import com.hillel.core.driver.WebDriverFactory;
 import com.hillel.util.core.WebDriverUtils;
 import io.qameta.allure.Allure;
 import lombok.extern.log4j.Log4j2;
-import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITest;
 import org.testng.ITestResult;

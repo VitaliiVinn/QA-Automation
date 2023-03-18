@@ -6,7 +6,6 @@ import com.hillel.pages.FreeConsultationPage;
 import lombok.extern.java.Log;
 import lombok.extern.log4j.Log4j;
 import lombok.extern.log4j.Log4j2;
-import org.junit.runners.Parameterized;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;

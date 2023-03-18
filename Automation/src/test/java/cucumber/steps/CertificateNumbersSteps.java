@@ -6,9 +6,10 @@ import com.hillel.pages.CertificatePage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 public class CertificateNumbersSteps extends BaseUiSteps {
     //Напишіть сценарій у feature файлі , який вводить різні значення в полі, Перевірка сертифікату на сторінці
